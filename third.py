@@ -48,121 +48,90 @@ def take_dimentions():
 
 def gomlek():
 
+    # Ölçüler Alınıyor
 
-    os.system("clear")
-    print("Lütfen modelin ölçülerini alınız.")
-    print("Ölçüleri girerken ondalıklı sayılarda nokra (.) kullanınız. harf kullanmayınız\n")
+    Сш =  float(input("Полуобхват шеи, Сш               : "))
+    Сг =  float(input("Полуобхват груди, Сг             : "))
+    Шг =  float(input("Ширина груди, Шг                 : "))
+    Вг =  float(input("Высота груди, Вг                 : "))
+    Дпт = float(input("Длина переда до линии талии, Дпт : "))
+    Дст = float(input("Длина спины до линии талии, Дст  : "))
+    Ди =  float(input("Длина изделия, Ди                : "))
+    Впс = float(input("Высота плеча спины, Впс          : "))
+    Шс =  float(input("Ширина спины, Шс                 : "))
+    Дп =  float(input("Длина плеча, Дп                  : "))
+    Др =  float(input("Длина рукава, Др                 : "))
+    Оп =  float(input("Обхват плеча, Оп                 : "))
+    Шп =  float(input("Şırina pleça, Шп                 : "))
+    Пг=5.5 # полуобхвата груди
+    Пк=2   # прибавка конструктивная
+    Пш=1   # полуобхвата шеи
 
-    # Ölçüler alınıyor
+    # Değerler hesaplanıyor
 
-    print("\nBoyun Yarıçapı. Boyun Çevresini ölçün ve ikiye bölün"); SSH = float(input("СШ : "))
+    Ан  = Ди
+    АТ  = Дст
+    АГ  = Дст / 4 + Сг / 4 + Пг /4
+    ТБ  = Дст / 2 - 2
+    ГГ1 = Сг + Пг + Пк
+    ГП = Шс + Пг / 2
+    ПП1 = Оп / 3 + Пг / 2 + Пк / 2
+    АР = Сш / 3 + Пш
+    РР1 = АР / 3
+    ТП2 = Впс + 2
+    Р1П3 = Шп + 0.5
+    ПП4 = ПП1 / 2
+    ПП5 = ПП1 / 3
+    П1П6 = ПП1 / 3 - 1
+    П1Г1 = Шг + Пк / 2
+    Г1В = Вг
+    Т1В = Дпт
+    В2П7 = Шп
+    ОН = Др - 6.5
+    ОВ = ПП1 - 2
+    ВВ1 = ПП1 * 3 / 2
+    НН1 = ПП1
+    ОВ = ПП1
+    ВВ1 = ( Оп + 10 ) / 2
 
-    print("\nBoyun Esneklik payının yarısı "); PRSH = float(input("ПРШ : "))
+    print("\nKalıp ile ilgili")
+    print("~~~~~~~~~~~~~")
+    print("Ан   : ", round(Ан, 2))
+    print("АТ   : ", round(АТ, 2))
+    print("АГ   : ", round(АГ, 2))
+    print("ТБ   : ", round(ТБ, 2))
+    print("ГГ1  : ", round(ГГ1, 2))
 
-    print("\nGöğüs Yarıçapı"); CG = float(input("СГ : "))
+    print("\nСпинка")
+    print("~~~~~~~~~~~~~")
+    print("ГП   : ", round(ГП, 2))
+    print("ПП1  : ", round(ПП1, 2))
+    print("ПП1  : ", round(ПП1, 2))
+    print("АР   : ", round(АР, 2))
+    print("РР1  : ", round(РР1, 2))
+    print("ТП2  : ", round(ТП2, 2))
+    print("Р1П3 : ", round(Р1П3, 2))
+    print("ПП4  : ", round(ПП4, 2))
+    print("ПП5  : ", round(ПП5, 2))
+    print("П1П6 : ", round(П1П6, 2))
 
-    print("\nGöğüs Genişliği"); SHG = float(input("ШГ : "))
+    print("\nПолочка")
+    print("~~~~~~~~~~~~~")
+    print("П1Г1 : ", round(П1Г1, 2))
+    print("Г1В  : ", round(Г1В, 2))
+    print("Т1В  : ", round(Т1В, 2))
+    print("В2П7 : ", round(В2П7, 2))
 
-    print("\nGöğüs Çevresi Esneklik Payının yarısı"); PR = float(input("ПРГ : "))
+    print("\nДлинный рукав")
+    print("~~~~~~~~~~~~~")
+    print("ОН   : ", round(ОН, 2))
+    print("ОВ   : ", round(ОВ, 2))
+    print("ВВ1  : ", round(ВВ1, 2))
+    print("НН1  : ", round(НН1, 2))
 
-    print("\nTrapez başlangıcından -> Meme ucuna kadar"); VG = float(input("ВГ : "))
-
-    print("\nÖnden, Trapez başlangıcından -> Bele kadar DÜZ"); DPT = float(input("ДПТ : "))
-
-    print("\nSırt Uzunluğu. Arkadan, 7. Omurdan -> Bele kadar"); DCT = float(input("ДСТ : "))
-
-    print("\nGömlek uzunluğu"); DI = float(input("ДИ : "))
-
-    print("\nArkadan, Omuz ucundan -> Belin ortasına kadar ÇAPRAZLAMA"); VPKS = float(input("ВПКС : "))
-
-    print("\nSırt Genişliği"); SHS = float(input("ШС : "))
-
-    print("\nTrapez başından -> Omuz ucuna kadar, Omuz genişliği"); DP = float(input("ДП : "))
-
-    print("\nKol Uzunluğu, Omuz Ucundan -> Baş Parmağın ilk eklemine kadar"); DR = float(input("ДР : "))
-
-    print("\nKoltuk altından, Üst Kol Çevresi"); OP = float(input("ОП : "))
-
-    print("\nEsneklik Payını giriniz"); OP = float(input("ОП : "))
-
-    # Gerekli Hesaplamalar yapılıyor
-
-    # ?
-
-    AG  = round((((DCT / 4) + ( CG / 2 ) / 4) + (PR / 4)), 1)
-    GG1 = round(CG + (OP / 2),1) # burada eklenmesi gereken bir değer vardı if ile soracaktın
-
-    # Arka Taraf
-
-    GP  = round((SHS + OP/2),1)
-    PP1 = round((DP/3 + OP/2),1) # gene +1 vardı opsiyonel if ile soracaktın
-    AR  = round((SSH/3 + PRSH),1)
-    RR1 = round((AR / 3),1)
-    TP2 = round((VPKS + 2),1)
-    R1P3= round((OP + 0.5),1)
-    PP4 = round((PP1 / 2),1)
-    PP5 = round((PP1 / 3),1)
-    P1P6= round(((PP1 / 3) -1),1)
-
-    # Ön Taraf
-
-    P1G1 = round((SHG + (PR / 2) / 2),1)
-    G1V  = round((VG),1)
-    T1V  = round((DPT),1)
-    V2P7 = round((DP),1)
-
-    # Uzun Kol
-
-    ON  = round((DR - 6.5),1)
-    OV  = round((PP1 -2),1)
-    VV1 = round(((PP1*3)/2),1)
-    NN1 = round((PP1),1)
-
-    # Kısa Kol
-
-    OV  = round((PP1),1)
-    VV1 = round(((OP + 10)/2),1)
-
-    os.system("clear")
-    print("Kalıp Değerleri")
-    print("~~~~~~~~~~~~~~~\n")
-
-    print("АГ   : {}".format(AG))
-    print("ГГ1  : {}".format(GG1))
-
-    print("\nArka Taraf")
-    print("~~~~~~~~~~\n")
-
-    print("ГП   : {}".format(GP  ))
-    print("ПП1  : {}".format(PP1 ))
-    print("АР   : {}".format(AR  ))
-    print("РР1  : {}".format(RR1 ))
-    print("ТП2  : {}".format(TP2 ))
-    print("Р1П3 : {}".format(R1P3))
-    print("ПП4  : {}".format(PP4 ))
-    print("ПП5  : {}".format(PP5 ))
-    print("П1П6 : {}".format(P1P6))
-
-    print("\nÖn Taraf")
-    print("~~~~~~~~\n")
-
-    print("П1Г1 : {}".format(P1G1))
-    print("Г1В  : {}".format(G1V ))
-    print("Т1В  : {}".format(T1V ))
-    print("В2П7 : {}".format(V2P7))
-
-    print("\nUzun Kol")
-    print("~~~~~~~~\n")
-
-    print("ОН   : {}".format(ON))
-    print("ОВ   : {}".format(OV))
-    print("ВВ1  : {}".format(VV1))
-    print("НН1  : {}".format(NN1))
-
-    print("\nKısa Kol")
-    print("~~~~~~~~\n")
-
-    print("ОВ   : {}".format(OV))
-    print("ВВ1  : {}".format(VV1))
+    print("\nКороткий рукав")
+    print("~~~~~~~~~~~~~")
+    print("ОВ   : ", round(ОВ, 2))
+    print("ВВ1  : ", round(ВВ1, 2))
 
 start()
